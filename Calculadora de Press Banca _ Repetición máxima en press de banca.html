@@ -1,0 +1,861 @@
+<!DOCTYPE HTML>
+
+
+
+
+<html lang="es">
+    <head>
+      <meta charset="utf-8">
+      
+    
+    <title>Calculadora de Press Banca | Repetición máxima en press de banca</title>
+    <meta name="description" content="Bench Press Calculator for 1RM. Calculate your one repetition max in bench press and the table with maximum weight for all repetition ranges." />
+    <meta property="og:title" content="Bench Press Calculator | One rep max calculator for bench"/>
+    <meta property="og:description" content="Bench Press Calculator for 1RM. Calculate your one repetition max in bench press and the table with maximum weight for all repetition ranges.">	
+    
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:image" content="/static/img/icons/media/bench.png"/>
+    <meta property="og:url" content="https://rmcalculator.com/es/bench-calculator/"/>
+    <meta property="og:site_name" content="RM Calculator"/>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="" />
+      <meta name="author" content="RM Calculator" />
+      <meta property="og:type" content="website" />
+      
+      <!-- International -->
+      <link rel="canonical" href="https://rmcalculator.com/es/bench-calculator/"</link>
+
+      
+        
+          <link rel="alternate" href="https://rmcalculator.com/en/bench-calculator/" hreflang="en"</link>
+          <link rel="alternate" href="https://rmcalculator.com/es/bench-calculator/" hreflang="es"</link>
+        
+      
+      
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0TZ7M1VZK"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-H0TZ7M1VZK');
+      </script>
+
+      <!-- Favicon -->
+      <link href="/static/favicon.ico" rel="icon">
+
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+      
+      <!-- Icon Font Stylesheet -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+      <!-- Customized Bootstrap Stylesheet -->
+      <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Template Stylesheet -->
+      <link href="/static/css/style.css" rel="stylesheet">
+      <link href="/static/css/main.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+      <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="/" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary">RM Calculator</h3>
+                </a>
+                <a href="/" class="sidebar-toggler latBarToggler flex-shrink-0 color-prim">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- <div class="d-flex align-items-center ms-4 mb-4"> -->
+                    <!-- <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div> -->
+                    <!-- <div class="ms-3">
+                        <h6 class="mb-0">Jhon Doe</h6>
+                        <span>Admin</span>
+                    </div> -->
+                <!-- </div> -->
+                <div class="navbar-nav w-100">
+                    
+                        <a href="/" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Inicio</a>
+                    
+					<hr class="upper-hr">
+                      <span class="navbar-header">Servicios</span>
+                    <hr class="lower-hr">
+                    
+                        <a href="/streetlifting-online-coaching" class="nav-item nav-link"><i class="fa fa-chalkboard me-2"></i>Asesorías online</a>
+                    
+					
+					<!--  -->
+                        <!-- <a href="/streetlifting-technique-revision" class="nav-item nav-link"><i class="fa fa-chalkboard me-2"></i>Revisión de la técnica</a> -->
+                    <!--  -->
+					
+					<hr class="upper-hr">
+                      <span class="navbar-header">Calculadoras</span>
+                    <hr class="lower-hr">
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div> -->
+                    
+                        <a href="/squat-calculator" class="nav-item nav-link"><img src = "/static/img/icons/squat.png" class="me-2 imgNav"/>Sentadilla</a>
+                    
+
+                    
+                        <a href="/bench-calculator" class="nav-item nav-link active"><img src = "/static/img/icons/bench.png" class="me-2 imgNavB"/><b>Pres de Banca</b></a>
+                    
+
+                    
+                        <a href="/deadlift-calculator" class="nav-item nav-link"><img src = "/static/img/icons/deadlift.png" class="me-2 imgNav"/>Peso Muerto</a>
+                    
+
+                    
+                        <a href="/pull-up-calculator" class="nav-item nav-link"><img src = "/static/img/icons/pull-up.png" class="me-2 imgNav"/>Dominada</a>
+                    
+
+                    
+                        <a href="/dips-calculator" class="nav-item nav-link"><img src = "/static/img/icons/tricep-dips.png" class="me-2 imgNav"/>Fondos</a>
+                    
+
+                    
+                        <a href="/muscle-up-calculator" class="nav-item nav-link"><img src = "/static/img/icons/muscle-up.png" class="me-2 imgNav"/>Muscle Up</a>
+                    
+					
+					
+                    <hr class="upper-hr">
+                      <span class="navbar-header">Otros</span>
+                    <hr class="lower-hr">
+                    
+                        <a href="/contact" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Contacto</a>
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar upper-navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="/" class="sidebar-toggler flex-shrink-0 color-prim">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="circle"></div>
+                <img class="logo-img" src="/static/img/logo-small-blue.png">
+                <!-- <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form> -->
+                <div class="navbar-nav align-items-center ms-auto" style="gap:10px">
+
+                <div class="nav-item">
+                    
+                        <span name="language" value = "en" class="languageSelector"><a style="color: #6C7293;" href="/set_language/en?next=/en/bench-calculator/">EN</a></span>
+                    
+                  </div>
+                  <div class="nav-item">
+                    
+                        <span name="language" class="languageSelector active">ES</span>
+                    
+                  </div>
+
+
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            
+<div class="container-fluid pt-4 px-4">
+    <div class ="bg-secondary rounded p-4 textColor" style="height: 300px;display: inline-table;width: 100%;">
+        
+            <h1 class="textColor calculator-title">Calculadora de Press de Banca</h1>
+        
+
+
+        <div class="col-md-6">
+            <div class="md-6-title preFormWrapper">
+                <h3>Tus Datos</h3>
+                <div class="radial-wrapper">
+                    <select id="kgorlb" class="form-select mb-3 no-margin" aria-label="Default select example">
+                        <option selected>Kg</option>
+                        <option>lb</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bg-secondary rounded h-100 p-4">
+                <form>
+                    <div class="calc-form-m3">
+                        <h6>Modo de Calculadora</h6>
+                        <select id="calcmode" class="form-select mb-3" aria-label="Default select example">
+                            <option selected value = "RM">Calcular la RM</option>
+                            <option value = "REPS">Calcular Repeticiones a partir de la RM</option>
+                            <option value = "LOAD">Calcular la Carga a partir de la RM</option>
+                        </select>
+                    </div>
+                    <div class="calc-form-m3">
+                        <h6 hidden id="labelBW" class="form-label">Peso Corporal</h6>
+                        <input hidden type="text" class="form-control" id="inputBW" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                    </div>
+                    <div class="calc-form-m3">
+                        <h6 hidden id="labelRM" class="form-label">Tu RM</h6>
+                        <input hidden type="text" class="form-control" id="inputRM" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                    </div>
+                    <div class="calc-form-m3">
+                        <h6 id="labelLW" class="form-label">Peso Levantado</h6>
+                        <input type="text" class="form-control" id="inputLW" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                        </div> -->
+                    </div>
+                    <div class="calc-form-m3">
+                        <h6 id="labelR" class="form-label">Repeticiones</h6>
+                        <input type="text" class="form-control" id="inputR" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                    </div>
+
+                    <div class="form-button-wrapper">
+                        <button type="button" class="btn btn-primary">Auto Calcular</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 result-div">
+            <div class="md-6-title">
+                <h3>Tu Resultado</h3>
+            </div>
+            <div class="result-wrapper">
+                <div class="result-row">
+                    <p class="result-p" id="f1p1"></p>
+                    <label class="result-l" id="f1l1">0</label>
+                    <p class="result-p" id="f1p2">repeticiones con</p>
+                    <label class="result-l" id="f1l2"> 0 Kg</label>
+                    <p class="result-p" id="f1p3">equivale a</p>
+                </div>
+                <div class="result-row">
+                    <div class="border-result-fit">
+                        <label id = "final-result-number" class="final-result-number">0 Kg</label>
+                    </div>
+                    <p class="result-p-middle" id="f2p1"></p>
+                </div>
+                <div class="result-row">
+                    <p class="result-p" id="f3p1">de una Repetición Máxima</p>
+                    <label class="result-l" id="f3l1"></label>
+                    <p class="result-p" id="f3p2"></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class ="bg-secondary rounded p-4 textColor" style="text-align: center;display: inline-table;width: 100%;">
+        <h4 class="mb-4" style="margin-bottom:0;">Tabla de Repeticiones Máximas con porcentajes</h4>
+        <div>
+            <input type="text" id="inputRMTaula" class="form-control inputRMTaula" placeholder="Your RM" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+            <!-- <select id="kgorlb2" class="form-select mb-3 no-margin" aria-label="Default select example">
+                <option selected>Kg</option>
+                <option>lb</option>
+            </select> -->
+        </div>
+        <table class="table table-dark" id="rmTable" style="text-align: center;max-width:850px;display:inline-table;">
+            <thead class="table-thead">
+                <tr>
+                    <th scope="col">Repeticiones</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Porcentaje de RM</th>
+                </tr>
+            </thead>
+            <tbody id = "rmTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <div class="container-fluid pt-4 px-4">
+    <div class ="bg-secondary rounded p-4 textColor" style="text-align: center;display: inline-table;width: 100%;">
+        <h4 class="mb-4" style="margin-bottom:0;">Visualización de la fórmula de una repetición máxima para Press Banca:</h4>
+        <br>
+        <div class="text-center" style="margin-bottom:15px;">
+            <h6 class="form-label" id="labelLiftedWeight">Peso Levantado</h6>
+            <input type="range" min="0" max="320" value="100" step = 1 class="slider" id="rangeWeight">
+        </div>
+        <div class="text-center">
+            <canvas id="grafica" style="min-height:350px;"></canvas>
+        </div>
+        <br>
+    </div>
+</div> -->
+<div class="container-fluid pt-4 px-4">
+    <div class ="bg-secondary rounded p-4 textColor" style="display: inline-table;width: 100%;">
+        <h4 class="mb-4">La Calculadora de RM de Fondos Lastrados</h4>
+        <p>La calculadora de RM de Press Banca es una herramienta que te permite calcular tu repetición máxima cuando haces Press de Banca. Esto te ayudará a determinar qué peso necesitas para tu próxima sesión de entrenamiento, y también te ayudará a medir cuántas repeticiones de banca son necesarias para ganar fuerza.
+        </p>
+        <p>
+            Debes tener en cuenta la 1RM al crear tu programa de entrenamiento de fuerza. El 1RM es la cantidad máxima de peso que puedes levantar una vez y determina la cantidad de peso que debes de poner a las series de tu entrenamiento para conseguir la intensidad deseada. También se usa para calcular el volumen de un entrenamiento, lo cual es importante porque si no entrenas con la intensidad suficiente, tus músculos no recibirán el estímulo que necesitan para crecer y hacerse más fuertes.
+        </p>
+        <br>
+        <h5>¿Por qué es tan importante usar una calculadora de repetición máxima?</h5>
+        <li>Conocer tu 1RM te ayudará a identificar mejoras en tu fuerza a lo largo del tiempo.</li>
+        <li>La 1RM es una buena medida del progreso y puede utilizarse para diseñar programas de entrenamiento que mejoren la fuerza y la masa muscular.</li>
+        <li>La calculadora de RM de Press de Banca te ayuda a calcular la cantidad de peso necesario para levantar 100 kilos a una repetición (1RM).</li>
+
+        <br><br>
+        <h4>Como usar la calculadora de fondos lastrados</h4>
+        <p>La calculadora tiene 3 configuraciones disponibles, dando al usuario la libertad de calcular 3 variables (RM, Peso Levantado y Repeticiones):</p>
+        <li>Calcular la repetición máxima (modo estándar)</li>
+        <li>Calcular las repeticiones dadas una Repetición Máxima y peso del levantamiento</li>
+        <li>Calcular el Peso del Levantamiento dada una Repetición Máxima y las Repeticiones</li>
+        <br>
+
+        <p>Una vez elegido el modo calculadora, tendrás que introducir los datos y la calculadora calculará automáticamente el resultado.</p>
+            
+        <br>
+        <h4 class="mb-4">Fórmula de una Repetición Máxima</h4>
+        <p>Una repetición máxima (1RM) es la cantidad máxima de peso que puedes levantar en una repetición. Es una medida importante para determinar tu fuerza y tu capacidad para levantar pesos pesados. Pero, ¿cómo calculas tu 1RM? ¿Y qué debe incluirse en este cálculo? A continuación, echaremos un vistazo a algunas fórmulas utilizadas para calcular los pesos submáximos (3RM, 5RM) o la repetición máxima (RM).
+        </p>
+        <p>
+            Entre las fórmulas más populares encontramos:
+        </p>
+        <li style="margin: 7px 0px;">Epley: <label class="formula">peso × (1 + 0.0333 × reps)</label></li>
+        <li style="margin: 7px 0px;">Brzycki: <label class="formula">peso × (36 / (37 - reps))</label></li>
+        <li style="margin: 7px 0px;">Lombardi: <label class="formula">peso × reps ^ 0.1</label></li>
+        <em style="font-size: small;">* Los resultados han sido adaptados para reps = 1, donde la RM = peso levantado</em>
+        <br>
+        <br>
+        <p>
+            Estas tres fórmulas se utilizan para calcular la repetición máxima o los otros dos parámetros de la calculadora.
+        </p>
+        <p>
+            Decidí calcular el resultado utilizando las tres fórmulas y promediando para obtener un resultado más preciso. La fórmula resultante es la siguiente (simplificada).
+        </p>
+        <li>La fórmula utilizada: <label class="formula">peso × (1 + (0.0333 × reps) + (36 / (37 - reps)) + reps ^ 0.1) / 3</label></li></li>
+        <br><br>
+        <h5>Visualización de la fórmula de una repetición máxima para Press Banca:</h5>
+        <br>
+
+        <div class="text-center" style="margin-bottom:15px;">
+            <h6 class="form-label" id="labelLiftedWeight">Peso Levantado</h6>
+            <input type="range" min="0" max="320" value="100" step = 1 class="slider" id="rangeWeight">
+        </div>
+        <div class="text-center">
+            <canvas id="grafica" style="min-height:325px;"></canvas>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="/contact">RM Calculators</a>, todos los Derechos Reservados.
+                        </div>
+                        <!-- <div class="col-12 col-sm-6 text-center text-sm-end">
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/static/js/main.js"></script>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script type="text/javascript">
+    const cMode = document.getElementById('calcmode');
+    const kgorlb = document.getElementById('kgorlb');
+
+    const inputRM = document.getElementById('inputRM');
+    const inputLW = document.getElementById('inputLW');
+    const inputR = document.getElementById('inputR');
+    const inputBW = document.getElementById('inputBW');
+
+    const labelRM = document.getElementById('labelRM');
+    const labelLW = document.getElementById('labelLW');
+    const labelR = document.getElementById('labelR');
+    const labelBW = document.getElementById('labelBW');
+
+    const f1p1 = document.getElementById('f1p1');
+    const f1p2 = document.getElementById('f1p2');
+    const f1p3 = document.getElementById('f1p3');
+    const f1l1 = document.getElementById('f1l1');
+    const f1l2 = document.getElementById('f1l2');
+
+    const f2p1 = document.getElementById('f2p1');
+
+    const f3p1 = document.getElementById('f3p1');
+    const f3p2 = document.getElementById('f3p2');
+    const f3l1 = document.getElementById('f3l1');
+
+    const finalResultNumber = document.getElementById("final-result-number");
+
+    const inputRMTaula = document.getElementById("inputRMTaula");
+    // const kgorlb2 = document.getElementById('kgorlb2');
+    const rmTable = document.getElementById('rmTableBody');
+    const defaultTable = [1,2,3,4,5,6,7,8,9,10,12,14,16];
+
+    function changeCalcMode(){
+        var calcMode = $("#calcmode").val();
+        if(calcMode === "LOAD"){
+            inputRM.removeAttribute('hidden');
+            labelRM.removeAttribute('hidden');
+
+            inputR.removeAttribute('hidden');
+            labelR.removeAttribute('hidden');
+
+            inputLW.hidden = true;
+            labelLW.hidden = true;
+        }
+        else if( calcMode === "REPS"){
+            inputRM.removeAttribute('hidden');
+            labelRM.removeAttribute('hidden');
+
+            inputR.hidden = true;
+            labelR.hidden = true;
+
+            inputLW.removeAttribute('hidden');
+            labelLW.removeAttribute('hidden');
+        }
+        else{
+            inputRM.hidden = true;
+            labelRM.hidden = true;
+
+            inputR.removeAttribute('hidden');
+            labelR.removeAttribute('hidden');
+
+            inputLW.removeAttribute('hidden');
+            labelLW.removeAttribute('hidden');
+        }
+    }
+
+    var updateform = function(){
+        var calcMode = document.getElementById('calcmode').value;
+        var kgorlbval = kgorlb.value;
+
+        var result=0
+        
+        if(calcMode === "LOAD"){
+            if (!isNaN(inputRM.value) && !isNaN(inputR.value)){
+                inputRMTaula.value = inputRM.value;
+                if(inputRM.value != "" && inputR.value != "" && inputR.value != 0 && inputRM.value != 0){
+                    if (Number(inputR.value) == 1){
+                        result1 = Number(inputRM.value)
+                    }
+                    else{
+                        result1 = inputRM.value/(1+(0.0333*inputR.value))
+                    }
+                    result2 = (inputRM.value*(37-inputR.value))/36
+                    result3 = inputRM.value/(Math.pow(inputR.value,0.1))
+
+                    result = (result1+result2+result3)/3
+
+                    f1p1.innerText = "";
+                    f1l1.innerText = "";
+                    f1p2.innerText = "Una Repetición Máxima de";
+                    f1l2.innerText = Number(parseFloat(inputRM.value).toFixed(1)).toString()+" "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "demasiadas repeticiones";
+                    f2p1.innerText = "";
+                    f3p1.innerText = "el resultado no sería realista";
+                    f3l1.innerText = "";
+                    f3p2.innerText = "";
+                    
+                    if(Number(inputR.value) < 25){
+                        finalResultNumber.innerText = Number(result.toFixed(1)).toString()+" "+kgorlbval;
+                        f3p1.innerText = "para";
+                        f3l1.innerText = Number(parseFloat(inputR.value).toFixed(1)).toString();
+                        f3p2.innerText = "repeticiones";
+                    }
+
+                }
+                else{
+                    f1p1.innerText = "";
+                    f1l1.innerText = "";
+                    f1p2.innerText = "Una Repetición Máxima de";
+                    f1l2.innerText = "0 "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "0 "+kgorlbval;
+                    f2p1.innerText = "";
+
+                    f3p1.innerText = "para";
+                    f3l1.innerText = "0";
+                    f3p2.innerText = "repeticiones";
+                }
+            }
+
+        }
+    
+        else if( calcMode === "REPS"){
+            if (!isNaN(inputRM.value) && !isNaN(inputLW.value)){
+                inputRMTaula.value = inputRM.value;
+                if (inputRM.value != "" && inputLW.value != "" && inputLW.value != 0 && inputRM.value != 0){
+                    if (inputRM.value == inputLW.value){
+                        result1 = 1
+                    }
+                    else{
+                        result1 = (inputRM.value-inputLW.value)/(0.0333*inputLW.value)
+                    }
+                    result2 = -(((36*inputLW.value)-(37*inputRM.value))/inputRM.value)
+                    result3 = Math.pow(inputRM.value,10)/(Math.pow(inputLW.value,10))
+
+                    result = (result1+result2+result3)/3
+
+                    if (result < 1){
+                        result = 0;
+                    }
+
+                    f1p1.innerText = "";
+                    f1l1.innerText = "";
+                    f1p2.innerText = "Una Repetición Máxima de";
+                    f1l2.innerText = Number(parseFloat(inputRM.value).toFixed(1)).toString()+" "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "demasiado poco peso";
+                    f2p1.innerText = "";
+                    f3p1.innerText = "el resultado no sería realista";
+                    f3l1.innerText = "";
+                    f3p2.innerText = "";
+
+                    if (result < 25){
+                        finalResultNumber.innerText = Number(result.toFixed(1)).toString();
+                        f2p1.innerText = "repeticiones";
+                        f3p1.innerText = "con";
+                        f3l1.innerText = Number(parseFloat(inputLW.value).toFixed(1)).toString()+" "+kgorlbval;
+                    }
+
+                }
+                else{
+                    f1p1.innerText = "";
+                    f1l1.innerText = "";
+                    f1p2.innerText = "Una Repetición Máxima de";
+                    f1l2.innerText = "0 "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "0";
+                    f2p1.innerText = "repeticiones";
+
+                    f3p1.innerText = "con";
+                    f3l1.innerText = "0 "+kgorlbval;
+                    f3p2.innerText = "";
+                }
+
+            }
+
+        }
+        else{
+            if (!isNaN(inputLW.value) && !isNaN(inputR.value)){
+                if (inputLW.value != "" && inputR.value != "" && inputLW.value != 0 && inputR.value != 0){
+                    if (Number(inputR.value) == 1){
+                        result1 = parseFloat(inputLW.value)
+                    }
+                    else{
+                        result1 = inputLW.value * (1+0.0333*inputR.value)
+                    }
+                    result2 = inputLW.value * (36/(37-inputR.value))
+                    result3 = inputLW.value * Math.pow(inputR.value,0.1)
+
+                    result = (result1+result2+result3)/3
+
+                    f1p1.innerText = "";
+                    f1l1.innerText = Number(parseFloat(inputR.value).toFixed(0)).toString();
+                    f1p2.innerText = "repeticiones con";
+                    f1l2.innerText = Number(parseFloat(inputLW.value).toFixed(1)).toString()+" "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "demasiadas repeticiones";
+                    f2p1.innerText = "";
+                    f3p1.innerText = "el resultado no sería realista";
+                    f3l1.innerText = "";
+                    f3p2.innerText = "";
+
+                    if(Number(inputR.value) < 20){
+                        finalResultNumber.innerText = Number(result.toFixed(1)).toString()+" "+kgorlbval;
+                        f2p1.innerText = "";
+                        f3p1.innerText = "de una Repetición Máxima";
+                        inputRMTaula.value = Number(result.toFixed(1));
+                    }
+
+
+                }
+                else{
+                    f1p1.innerText = "";
+                    f1l1.innerText = "0";
+                    f1p2.innerText = "repeticiones con";
+                    f1l2.innerText = "0 "+kgorlbval;
+                    f1p3.innerText = "equivale a";
+
+                    finalResultNumber.innerText = "0 "+kgorlbval;
+                    f2p1.innerText = "";
+
+                    f3p1.innerText = "de una Repetición Máxima";
+                    f3l1.innerText = "";
+                    f3p2.innerText = "";
+                }
+            }
+        }
+        updateTable();
+    };
+
+    var updateTable = function(){
+        if (!isNaN(inputRMTaula.value) && inputRMTaula.value != ""){
+
+            rmValue = parseFloat(inputRMTaula.value);
+
+            text = "";
+            for (const s of defaultTable) {
+
+                lwValue = Number(rmValue*(s/100)).toFixed(1)
+                result1 = rmValue/(1+(0.0333*s))
+                result2 = (rmValue*(37-s))/36
+                result3 = rmValue/(Math.pow(s,0.1))
+                result = ((result1+result2+result3)/3).toFixed(1).toString()
+
+                if (s==1){
+                    result = rmValue.toFixed(1).toString()
+                }
+
+
+                    
+
+                text += "<tr><td>"+s.toString()+"</td><td>"+result+" "+kgorlb.value+"</td><td>"+((result/rmValue)*100).toFixed(0)+" %</td></tr>";
+            }          
+            rmTable.innerHTML = text;
+        }
+        else{
+            text = "";
+            for (const s of defaultTable) {
+                text += "<tr><td>"+s.toString()+"</td><td>-</td><td>-</td></tr>";
+            }          
+            rmTable.innerHTML = text;
+
+        }
+
+    };
+
+    var myChart = "";
+
+    function buildChart(weight, update){        
+        if (kgorlb.value == "lb"){
+            weight = weight;
+        }
+        var prexValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        var xValues = [];
+        var yValues = [];     
+
+        for (const s of prexValues) {
+            result = weight;
+            if (s != 1){
+                result1 = weight * (1+0.0333*s)
+                result2 = weight * (36/(37-s))
+                result3 = weight * Math.pow(s,0.1)
+
+                result = (result1+result2+result3)/3;
+
+            }
+            if (!isNaN(result)){
+                if (kgorlb.value == "lb"){
+                    result = result;
+                }
+                yValues.push(result.toFixed(2));
+                xValues.push(s);
+
+            }
+
+        }
+
+        if (update){
+            myChart.data.datasets[0].data = yValues;
+            myChart.data.labels = xValues;
+            myChart.update();
+        }
+        else{
+            w = document.documentElement.clientWidth;
+            var ar = 2.25;
+            var pointRadius = 5;
+            var pointBorderWidth = 3;
+            var pointHoverRadius = 4;
+            var pointHoverBorderWidth = 2;
+            var pointHitRadius = 20;
+            if (w < 650){
+                ar = 1;
+                pointRadius = 4;
+                pointBorderWidth = 2;
+                pointHoverRadius = 3;
+                pointHoverBorderWidth = 2;
+                pointHitRadius = 6;
+            }
+            if (w > 600){
+                ar = 1.9;
+            }
+            if (w > 1200){
+                ar = 2.25;
+            }
+
+            myChart = new Chart("grafica", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        fill: false,
+                        lineTension: 0.35,
+                        backgroundColor: "rgba(0,0,0,1.0)",
+                        borderWidth: 3,
+                        borderColor: getComputedStyle(document.body).getPropertyValue('--primary'),
+                        data: yValues,
+                        label: "RM estimada",
+                        pointRadius: pointRadius,
+                        pointBorderWidth: pointBorderWidth,
+                        pointHoverRadius: pointHoverRadius,
+                        pointHoverBorderWidth: pointHoverBorderWidth,
+                        pointHitRadius: pointHitRadius,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    aspectRatio: ar, 
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: "white",
+                        }
+                    },
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    fontColor: 'white',
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: "RM estimada",
+                                    fontColor: 'white',
+                                },
+                                gridLines: {
+                                    color: "#42434e"
+                                },
+                            }
+                        ],
+                        xAxes: [
+                            {
+                                ticks: {
+                                    fontColor: 'white',
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: "Repeticiones",
+                                    fontColor: 'white',
+                                },
+                                gridLines: {
+                                    color: "#42434e"
+                                },
+                            }
+                        ]
+
+                    }
+                }
+            });
+        }
+    }
+
+
+    buildChart(100, false);
+
+
+    window.onresize = function(event) {
+        w = document.documentElement.clientWidth;
+        ar = 2.5;
+        if (w < 650){
+            ar = 1;
+        }
+        if (w > 600){
+            ar = 1.9;
+        }
+        if (w > 1200){
+            ar = 2.25;
+        }
+        myChart.aspectRatio = ar;
+        myChart.resize();
+    };
+    
+    cMode.addEventListener('change', changeCalcMode);
+    cMode.addEventListener('change', updateform);
+    kgorlb.addEventListener('change', updateform);
+    kgorlb.addEventListener('change', updateSliders);
+    inputR.addEventListener('keyup', updateform);
+    inputLW.addEventListener('keyup', updateform);
+    inputRM.addEventListener('keyup', updateform);
+    inputBW.addEventListener('keyup', updateform);
+
+    // kgorlb2.addEventListener('change', updateTable);
+    inputRMTaula.addEventListener('keyup', updateTable);
+
+    updateTable();
+
+    var sliderWeight = document.getElementById("rangeWeight");
+    const labelLiftedWeight = document.getElementById("labelLiftedWeight");
+
+    sliderWeight.oninput = function() {
+        buildChart(parseFloat(sliderWeight.value),true);
+        labelLiftedWeight.innerText = "Peso Levantado"+" ("+sliderWeight.value+" "+kgorlb.value+")";
+    }
+    function updateSliders(){
+        if (kgorlb.value == "Kg"){
+            sliderWeight.max = 320;
+            sliderWeight.min = 0;
+            sliderWeight.step = 1;
+            sliderWeight.value = 100;
+        }
+        else{
+            sliderWeight.max = 700;
+            sliderWeight.min = 0;
+            sliderWeight.step = 1;
+            sliderWeight.value = 220;
+        }
+        labelLiftedWeight.innerText = "Peso Levantado"+" ("+sliderWeight.value+" "+kgorlb.value+")";
+        buildChart(parseFloat(sliderWeight.value),true);
+    }
+    updateSliders();
+
+</script>
+
+
+  </body>
+
+
+</html>
